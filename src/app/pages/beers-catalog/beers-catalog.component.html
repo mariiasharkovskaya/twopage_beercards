@@ -1,0 +1,13 @@
+<ng-container *ngIf="beers?.length; else loadingRef">
+    <div class='beer_card' *ngFor="let beer of beers" routerLink="{{beer.id}}">
+        <div class="beer_name">
+            <h2>{{beer.name}}</h2>
+            <h4>{{beer.first_brewed}}</h4>
+        </div>
+        <img class="beer_image" src='{{beer.image_url}}'>
+    </div>
+</ng-container>
+
+<ng-template #loadingRef>
+    Loading...
+</ng-template>
